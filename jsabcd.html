@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+    .box{width:150px;height:150px;background:#333;display: inline-block;margin:5px;text-align:center;line-height:150px;cursor: pointer;color:white; font-size:30px;}
+    </style>
+</head>
+<body>
+    <script>        
+    for(var i=1;i<=20;i++){
+        document.write('<audio class="player'+i+'"><source src="button-'+i+'.mp3" type="audio/mpeg"></audio>'); 
+        document.write('<div class="box" id="box'+i+'" onclick="playsound('+i+')">'+i+'</div>');
+    }
+    function playsound(a){
+        if($('#box'+a).css('background-color')=="rgb(204, 204, 204)"){
+            $('#box'+a).css('background-color','#333');    
+            $('#box'+a).css('color','#fff');
+        }else{
+            $('#box'+a).css('background-color','#ccc');
+            $('#box'+a).css('color','#000');
+        $('.player'+a).trigger('play');
+        }
+        
+    }
+    </script>
+</body>
+</html>
